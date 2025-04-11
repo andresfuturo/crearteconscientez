@@ -378,3 +378,44 @@ body {
         max-width: 400px;
     }
 }
+
+.gracias-container {
+    max-width: 400px;
+    padding: 20px 40px 20px 20px; 
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    color: cyan;
+    box-shadow: 0 0 15px cyan;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gracias-container h1 {
+    color: cyan;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.gracias-container p {
+    color: white;
+    font-size: 1rem;
+    margin-bottom: 30px;
+}
+
+.gracias-container a {
+    text-decoration: none;
+    color: black;
+    background-color: cyan;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.gracias-container a:hover {
+    background-color: white;
+}

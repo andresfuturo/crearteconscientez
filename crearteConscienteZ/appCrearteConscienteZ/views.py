@@ -1,5 +1,35 @@
-from contextlib import redirect_stderr
-from django.shortcuts import render # type: ignore
+from django.shortcuts import  render
+from django.conf import settings
+from django.core.mail import send_mail
+
+
+def contacto(request):
+    if request.method == "POST":
+        name = request.POST["name"]
+        email = request.POST["email"]
+        subject = request.POST["subject"]
+        message = request.POST["message"]
+
+        # Agregamos nombre y email al mensaje:
+        message = f"Mensaje de: {name}\nEmail: {email}\n\n{message}"
+
+        from_email = settings.EMAIL_HOST_USER
+        recipient_list = ["crearteconscientez@gmail.com"]
+
+        send_mail(subject, message, from_email, recipient_list)
+
+        return render(request, "gracias.html")
+    
+    return render(request, "contacto.html")
+
+
+def gracias (request):
+    return render(request,"gracias.html")
+
+
+
+
+
 # Create your views here.
 def home (request):
     return render(request,"home.html")
@@ -7,8 +37,6 @@ def home (request):
 def portalDeAcceso(request):
     return render(request, 'portalDeAcceso.html')
 
-def ayuda(request):
-    return render(request, 'ayuda.html')
 
 def registroUsuario(request):
     return render(request, "registroUsuario.html") 
@@ -70,3 +98,7 @@ def mision_aire_masculino(request):
 
 def mision_agua_masculino(request):
     return render(request, 'misiones_masculinos/mision_agua_masculino.html')
+
+
+
+

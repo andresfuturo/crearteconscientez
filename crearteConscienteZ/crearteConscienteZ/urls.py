@@ -26,7 +26,8 @@ urlpatterns = [
     path('', include('appCrearteConscienteZ.urls')),
     path('', views.home, name='home'),
     path('portalDeAcceso/', views.portalDeAcceso, name='portalDeAcceso'),
-    path('ayuda/', views.ayuda, name='ayuda'),
+    path('contacto/', views.contacto, name='contacto'),
+    path('gracias/', views.gracias, name='gracias'),
     path('elementos/', views.elementos, name='elementos'),
     path('portalDeAcceso/registroUsuario/', views.registroUsuario, name='registroUsuario'),
     
@@ -50,4 +51,8 @@ urlpatterns = [
     path('mision_tierra_masculino/', views.mision_tierra_masculino, name='mision_tierra_masculino'),
     path('mision_aire_masculino/', views.mision_aire_masculino, name='mision_aire_masculino'),
     path('mision_agua_masculino/', views.mision_agua_masculino, name='mision_agua_masculino'),
+
+ 
+
+
 ]
