@@ -1,0 +1,26 @@
+<!--prueba de nuevo pc-->
+{% extends "base.html" %} <!--Aqui es lo que hereda del archivo base-->
+
+{% load static %}<!--carga archivos estaticos css java html -->
+
+{% block title %}
+   Home
+{% endblock %}
+
+{% block content %}  
+    <div class="door-container">
+        <div class="door left"></div>
+        <div class="door right"></div>
+    </div>
+
+    
+
+    <div class="content">
+        <h1>Bienvenido a Crearte ConscienteZ</h1>
+        <p class="subtitle">Explora tu potencial a través de los cuatro elementos</p>
+        <a href="{% url 'portalDeAcceso' %}" class="start-button">Comenzar</a>
+    </div>
+    
+{% endblock %}
+
+<script src="{% static 'js/script.js' %}"></script>

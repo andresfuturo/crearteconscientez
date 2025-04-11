@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Elemento Tierra{% endblock %}
+
+{% block content %}
+<main class="elemento-container elemento-tierra">
+
+    <section class="contenido-horizontal">
+        <div class="avatarTierra">
+            <!-- Contenedor para el modelo 3D -->
+            <div id="contenedor-3d-avatar_tierra_femenina" style="width: 100%; height: 400px;" title="Arrastra con el mouse para mover la vista. Usa la rueda para acercar o alejar."></div>
+        </div>
+
+        <section class="descripcion">
+            <h2>Elemento Tierra: Raíz, Cuidado y Estabilidad</h2>
+            <p>Eres la Tierra: firme, sabia y maternal. Tu presencia es refugio, tu esencia nutre y sostiene. En ti se cultiva la fortaleza. A través de tu energía femenina, conectas con lo esencial, lo real y lo eterno. Eres la base que otros buscan para crecer y florecer.</p>
+
+            <div class="acciones">
+                <a href="{% url 'mision_tierra_femenina' %}" class="btn btn-mision">Haz clic aquí para iniciar misión</a>
+                <br><br>
+                <a href="{% url 'elementos' %}" class="btn">Volver a los Elementos</a>
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- Script personalizado para cargar el modelo tierra -->
+<script type="module" src="{% static 'js/avatar_tierra_femenina.js' %}"></script>
+
+{% endblock %}
+

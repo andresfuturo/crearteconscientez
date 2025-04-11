@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Misión Agua{% endblock %}
+
+{% block content %}
+<main class="mision-container">
+    <section class="contenido-vertical">
+        <h1 class="titulo-mision">Misión Agua - La Guardiana de las Mareas</h1>
+
+        <div class="imagen-avatar">
+            <img src="{% static 'img/avatar_femenina_agua.jpg' %}" alt="Avatar del Agua">
+        </div>
+   
+        <div class="intro-con-imagen">         
+            <div class="imagen-maestro">
+                <img src="{% static 'img/yemaya.jpg' %}" alt="Yemayá">
+            </div>        
+
+            <div class="intro-mision">
+                <p>Las olas susurran secretos antiguos y las corrientes llevan mensajes de lo profundo. De entre las aguas emerge una presencia maternal y poderosa.</p>
+                <p>“Bienvenida Hija del Agua, tu fluidez es tu fortaleza. Hoy recordarás cómo moverte con gracia, adaptarte sin perder tu esencia y sanar con la pureza de tus emociones. El agua crea y transforma. att: Yemayá”</p>
+            </div>
+        </div>   
+
+        <div class="contenedor-derecha">
+            <section class="desafios">
+                <h2>Desafíos de la Misión</h2>
+        
+                <form id="misiones-form">
+                    <ul class="lista-desafios">
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio1">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Reflejo en el Agua (5 min):</h3>
+                                    <p>Observa tu reflejo en el agua, ya sea en un vaso, un río o el mar. ¿Qué emociones emergen? ¿Qué te susurra el agua sobre ti misma?</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio2">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Bendición de las Aguas:</h3>
+                                    <p>Coloca un vaso con agua frente a ti. Sosténlo y declara palabras de amor y gratitud. Luego, bébelo sintiendo su energía renovadora.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio3">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Fluir con Confianza:</h3>
+                                    <p>Durante el día, ante cualquier obstáculo, repite: “Como el agua, me adapto sin perder mi esencia”. </p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio4">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Atención a tu ser:</h3>
+                                    <p>Lava tu rostro, despacio.</p>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+                    
+                    <button type="submit" class="btn-misiones">🌊 Misiones cumplidas</button>
+                </form>
+        
+                <p class="frase-cierre">
+                    <em>“El agua enseña el poder de la entrega: no lucha contra la roca, la abraza hasta transformarla.”</em>
+                </p>
+            </section>
+        </div>
+</main>
+{% endblock %}

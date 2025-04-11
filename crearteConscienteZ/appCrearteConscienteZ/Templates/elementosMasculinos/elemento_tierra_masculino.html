@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Elemento Tierra{% endblock %}
+
+{% block content %}
+<main class="elemento-container elemento-tierra">
+
+    <section class="contenido-horizontal">
+        <div class="avatarTierra">
+            <!-- Contenedor para el modelo 3D -->
+            <div id="contenedor-3d-avatar_tierra_masculino" style="width: 100%; height: 400px;" title="Arrastra con el mouse para mover la vista. Usa la rueda para acercar o alejar."></div>
+        </div>
+
+        <section class="descripcion">
+            <h2>Elemento Tierra: Fortaleza, Estabilidad y Conexión</h2>
+            <p>Eres la Tierra: la base sólida que sostiene la vida, la raíz que da sustento y la roca que resiste el tiempo.
+            Tu energía masculina se expresa en la fortaleza, la paciencia y el crecimiento constante. 
+            Eres estabilidad, protección y renovación. Donde tú estás, todo florece.</p>
+
+            <div class="acciones">
+                <a href="{% url 'mision_tierra_masculino' %}" class="btn btn-mision">Haz clic aquí para iniciar misión</a>
+                <br><br>
+                <a href="{% url 'elementos' %}" class="btn">Volver a los Elementos</a>
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- Script personalizado para cargar el modelo tierra masculino -->
+<script type="module" src="{% static 'js/avatar_tierra_masculino.js' %}"></script>
+
+{% endblock %}

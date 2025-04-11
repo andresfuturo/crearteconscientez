@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Elemento Aire{% endblock %}
+
+{% block content %}
+<main class="elemento-container elemento-aire">
+
+    <section class="contenido-horizontal">
+        <div class="avatarAire">
+            <!-- Contenedor para el modelo 3D -->
+            <div id="contenedor-3d-avatar_aire_femenina" style="width: 100%; height: 400px;" title="Arrastra con el mouse para mover la vista. Usa la rueda para acercar o alejar."></div>
+        </div>
+
+        <section class="descripcion">
+            <h2>Elemento Aire: Libertad, Claridad </h2>
+            <p>Eres el Aire: libre, sutil y expansivo. Tu energía femenina es pensamiento en movimiento, inspiración pura y palabra sabia. Tu presencia da espacio, tu mente abre caminos y tu espíritu danza con el viento. En ti habita la capacidad de conectar ideas, elevar conciencias con ligereza.</p>
+
+            <div class="acciones">
+                <a href="{% url 'mision_aire_femenina' %}" class="btn btn-mision">Haz clic aquí para iniciar misión</a>
+                <br><br>
+                <a href="{% url 'elementos' %}" class="btn">Volver a los Elementos</a>
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- Script personalizado para cargar el modelo aire -->
+<script type="module" src="{% static 'js/avatar_aire_femenina.js' %}"></script>
+
+{% endblock %}

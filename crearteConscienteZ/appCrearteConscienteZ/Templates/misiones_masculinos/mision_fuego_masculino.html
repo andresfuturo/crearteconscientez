@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Misión Fuego Masculino{% endblock %}
+
+{% block content %}
+<main class="mision-container">
+    <section class="contenido-vertical">
+        <h1 class="titulo-mision">Misión Fuego - El Guerrero de la Llama</h1>
+
+        <div class="imagen-avatar">
+            <img src="{% static 'img/avatar_masculino_fuego.jpg' %}" alt="Avatar del Fuego Masculino">
+        </div>
+
+        <div class="intro-con-imagen">   
+            <div class="imagen-maestro">
+                <img src="{% static 'img/prometeo.jpg' %}" alt="Maestro del Fuego Masculino">
+            </div>
+            <div class="intro-mision">
+                <p>Una chispa atraviesa la oscuridad. Del fuego surge una figura firme, sus ojos arden con visión y propósito. Su presencia es la de un hombre que inicia desde el corazón.</p>
+                <p>“Bienvenido Portador del Fuego. No temas arder, pues tu llama guía a otros. Hoy recordarás cómo ser fuego sin quemar, cómo ser calor sin consumir. Tu fuego transforma la materia. — att Prometeo”</p>
+            </div>
+        </div>   
+
+        <div class="contenedor-derecha">
+            <section class="desafios">
+                <h2>Desafíos de la Misión</h2>
+
+                <form id="misiones-form">
+                    <ul class="lista-desafios">
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio1">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>El Grito del Fénix:</h3>
+                                    <p>Busca un lugar abierto y seguro. Emite un grito de poder con todo tu ser. Deja que el fuego salga como expresión de tu fuerza y libertad.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio2">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Visión Ígnea:</h3>
+                                    <p>¿Qué te apasiona profundamente? ¿Por qué causa, sueño o propósito estarías dispuesto a arder, luchar o entregarte por completo? Escribe tu declaración de misión personal con total verdad y fuego en el corazón.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio3">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Vigilia del Guardián:</h3>
+                                    <p>Enciende una vela y observa su llama durante 5 minutos en silencio. Deja que te hable, que te muestre tu centro ardiente. Respira fuerte que la muevas sin apagarla.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio4">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Compromiso de Fuego:</h3>
+                                    <p>Frente al fuego, declara tu compromiso con tu propósito o misión. Siente cómo ardes con decisión y amor por lo que eres.</p>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <button type="submit" class="btn-misiones">🔥 Misiones cumplidas</button>
+                </form>
+
+                <p class="frase-cierre">
+                    <em>“El verdadero fuego no destruye: revela lo esencial.”</em>
+                </p>
+            </section>
+        </div>
+</main>
+{% endblock %}

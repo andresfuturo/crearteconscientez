@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    {% load static %}
+    <link href="{% static 'css/estilo.css' %}" rel="stylesheet">
+    <link href="{% static 'css/portalDeAcceso.css' %}" rel="stylesheet">
+    <link href="{% static 'css/registroUsuario.css' %}" rel="stylesheet">
+    <link href="{% static 'css/elementoElegido.css' %}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/misiones.css' %}">
+    
+
+    
+    <title>{% block title %}{% endblock %}</title>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="{% static 'img/logo original ojo5.png' %}" alt="Logo Crearte ConscienteZ">
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'portalDeAcceso' %}">Portal De Acceso</a></li>
+            <li><a href="{% url 'ayuda' %}">Ayuda</a></li>
+        </ul>
+    </nav> 
+
+    {% block content %}
+    {% endblock %}
+
+    
+    {% block extra_js %}
+
+    {% endblock %}
+</body>
+</html>

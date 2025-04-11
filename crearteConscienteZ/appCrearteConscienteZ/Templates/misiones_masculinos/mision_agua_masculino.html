@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Misión Agua Masculino{% endblock %}
+
+{% block content %}
+<main class="mision-container">
+    <section class="contenido-vertical">
+        <h1 class="titulo-mision">Misión Agua - El Guardián del Océano</h1>
+
+        <div class="imagen-avatar">
+            <img src="{% static 'img/avatar_masculino_agua.jpg' %}" alt="Avatar del Agua Masculino">
+        </div>
+
+        <div class="intro-con-imagen">   
+            <div class="imagen-maestro">
+                <img src="{% static 'img/poseidon.jpg' %}" alt="Maestro del Agua Masculino">
+            </div>
+            <div class="intro-mision">
+                <p>El agua fluye sin resistencia, adaptándose a todo. Eres el canal de la emoción, el guardián de la profundidad. Tu esencia es la calma del lago y la fuerza de la tormenta.</p>
+                <p>“Bienvenido Portador del Agua. Aprende a sentir, a fluir y a transformar. Hoy recordarás que la verdadera fuerza está en la flexibilidad y la conexión con la vida. — att Poseidón”</p>
+            </div>
+        </div>   
+
+        <div class="contenedor-derecha">
+            <section class="desafios">
+                <h2>Desafíos de la Misión</h2>
+
+                <form id="misiones-form">
+                    <ul class="lista-desafios">
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio1">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>El Eco del Océano:</h3>
+                                    <p>Escucha el sonido del agua: una fuente, un río, el mar o incluso una grabación. Siente lo que te transmite.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio2">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Purificación Interior:</h3>
+                                    <p>Bebe agua lentamente, sintiendo cómo limpia y renueva tu interior. Visualiza cómo fluye dentro de ti.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio3">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Movimiento de las Mareas:</h3>
+                                    <p>Mueve tu cuerpo con suavidad, como si fueras una ola. Deja que el agua dentro de ti guíe tu ritmo.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio4">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Compromiso del Agua:</h3>
+                                    <p>Declara tu intención de fluir con la vida, adaptarte y conectar con la profundidad de tu ser.</p>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <button type="submit" class="btn-misiones">💧 Misiones cumplidas</button>
+                </form>
+
+                <p class="frase-cierre">
+                    <em>“El agua nunca se resiste: simplemente encuentra su camino.”</em>
+                </p>
+            </section>
+        </div>
+</main>
+{% endblock %}

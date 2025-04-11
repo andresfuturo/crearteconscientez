@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+   Portal de Acceso
+{% endblock %}
+
+{% block content %}  
+
+<style>
+    body {
+        background-image: url("{% static 'img/portaldeacceso.jpg' %}");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        background-color: #000;
+    }
+</style>
+<div class="contenedor-acceso">
+    <div class="portal-de-acceso">
+        <h1>Crearte ConscienteZ</h1>
+        <p>Empieza Tu Viaje</p>
+
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+
+        <a href="{% url 'elementos' %}" class="boton-ingresar"> <!--Esta mal el hipervinculo-->
+            INGRESAR
+        </a>
+    </div>
+
+    <div class="crear-cuenta">
+        <h2>¿No tienes cuenta?</h2>
+        <p>Regístrate para comenzar tu viaje</p>
+        <a href="{% url 'registroUsuario' %}" class="boton-crear-cuenta">Crear Cuenta</a>
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}

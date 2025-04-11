@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Elemento Agua{% endblock %}
+
+{% block content %}
+<main class="elemento-container elemento-agua">
+
+    <section class="contenido-horizontal">
+        <div class="avatarAgua">
+            <!-- Contenedor para el modelo 3D -->
+            <div id="contenedor-3d-avatar_agua_masculino" style="width: 100%; height: 400px;" title="Arrastra con el mouse para mover la vista. Usa la rueda para acercar o alejar."></div>
+        </div>
+
+        <section class="descripcion">
+            <h2>Elemento Agua: Adaptabilidad, Emoción y Profundidad</h2>
+            <p>Eres el Agua: el río que fluye sin resistencia, el océano que guarda misterios y la lluvia que renueva la vida.
+            Tu energía masculina se expresa en la adaptabilidad, la introspección y la sabiduría emocional. 
+            Eres calma, intuición y poder transformador. Donde tú estás, la vida fluye.</p>
+
+            <div class="acciones">
+                <a href="{% url 'mision_agua_masculino' %}" class="btn btn-mision">Haz clic aquí para iniciar misión</a>
+                <br><br>
+                <a href="{% url 'elementos' %}" class="btn">Volver a los Elementos</a>
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- Script personalizado para cargar el modelo agua masculino -->
+<script type="module" src="{% static 'js/avatar_agua_masculino.js' %}"></script>
+
+{% endblock %}

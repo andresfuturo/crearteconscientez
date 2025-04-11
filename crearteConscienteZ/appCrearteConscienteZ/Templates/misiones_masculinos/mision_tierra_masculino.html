@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Misión Tierra Masculino{% endblock %}
+
+{% block content %}
+<main class="mision-container">
+    <section class="contenido-vertical">
+        <h1 class="titulo-mision">Misión Tierra - El Guardián de la Raíz</h1>
+
+        <div class="imagen-avatar">
+            <img src="{% static 'img/avatar_masculino_tierra.jpg' %}" alt="Avatar de Tierra Masculino">
+        </div>
+
+        <div class="intro-con-imagen">   
+            <div class="imagen-maestro">
+                <img src="{% static 'img/atlas.jpg' %}" alt="Maestro de Tierra Masculino">
+            </div>
+            <div class="intro-mision">
+                <p>Desde las profundidades de la tierra, surge una presencia firme. Sus pies enraizados al suelo, su fuerza viene del equilibrio.</p>
+                <p>“Bienvenido Guardián de la Tierra. No temas enraizarte, porque desde la estabilidad puedes crecer hacia el cielo. Hoy recordarás el valor de la paciencia, la resistencia y el arraigo. — att Atlas”</p>
+            </div>
+        </div>   
+
+        <div class="contenedor-derecha">
+            <section class="desafios">
+                <h2>Desafíos de la Misión</h2>
+
+                <form id="misiones-form">
+                    <ul class="lista-desafios">
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio1">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Raíces Profundas:</h3>
+                                    <p>Camina descalzo sobre la tierra, sintiendo cada paso. Imagina que de tus pies nacen raíces que te conectan con la energía de la Tierra.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio2">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Roca Inamovible:</h3>
+                                    <p>Mantente de pie con los ojos cerrados durante 5 minutos. Respira profundo y siente tu estabilidad, como una roca firme que nada puede derribar.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio3">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>El Legado del Roble:</h3>
+                                    <p>Planta una semilla o un árbol en un lugar especial. Con cada crecimiento, recordarás tu propio camino de desarrollo y paciencia.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio4">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Compromiso de la Tierra:</h3>
+                                    <p>Escribe en una piedra tu compromiso con la estabilidad, la paciencia y la fortaleza. Guárdala como recordatorio de tu misión.</p>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <button type="submit" class="btn-misiones">🌿 Misiones cumplidas</button>
+                </form>
+
+                <p class="frase-cierre">
+                    <em>“Quien comprende la tierra, comprende la vida misma.”</em>
+                </p>
+            </section>
+        </div>
+</main>
+{% endblock %}

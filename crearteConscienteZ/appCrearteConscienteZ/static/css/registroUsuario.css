@@ -1,0 +1,68 @@
+
+
+
+/* PAGINA DE  registro de usuario*/
+.registro-container {
+    max-width: 400px;
+    padding: 20px 40px 20px 20px; 
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    text-align: center;
+    color: cyan;
+    box-shadow: 0 0 15px cyan;
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.registro-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid cyan;
+    background: black;
+    color: white;
+    border-radius: 5px;
+}
+
+.registro-container button {
+    background: cyan;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.registro-container a {
+    color: cyan;
+    text-decoration: none;
+}
+
+.registro-container a:hover {
+    text-decoration: underline;
+}
+
+/* estilos elementos estaticos simbolos */
+.elements-container {
+    display: flex; /* Usa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Alinea verticalmente */
+    gap: 0px; /* distancia entre imagenes */
+   
+}
+
+.element {
+    display: flex; /* centra imagenes  */
+}
+
+.element img {
+    width: 70px; /* Ajusta el tamaño del logo */
+    border-radius: 5px; /* Bordes redondeados sutiles */
+}

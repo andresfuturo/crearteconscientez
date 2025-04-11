@@ -1,0 +1,96 @@
+
+
+
+/* Contenedor general para centrar ambas secciones */
+.contenedor-acceso {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    gap: 30px;
+}
+
+/* Estilos del portal de acceso */
+.portal-de-acceso, .crear-cuenta {
+    background: rgba(0, 0, 0);
+    border: 2px solid cyan;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px cyan, 0 0 30px rgba(0, 255, 255, 0.5);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+.portal-de-acceso h1, .crear-cuenta h2 {
+    font-size: 2rem;
+    color: cyan;
+    letter-spacing: 2px;
+    text-shadow: 0 0 5px cyan, 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.portal-de-acceso p, .crear-cuenta p {
+    color: #bbb;
+    font-size: 1rem;
+}
+
+.portal-de-acceso input, .crear-cuenta input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: 1px solid cyan;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    outline: none;
+    transition: 0.3s;
+}
+
+.portal-de-acceso input:focus, .crear-cuenta input:focus {
+    box-shadow: 0 0 10px cyan;
+}
+
+.portal-de-acceso button, .crear-cuenta button {
+    width: 100%;
+    padding: 10px;
+    background: cyan;
+    color: black;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.portal-de-acceso button:hover, .crear-cuenta button:hover {
+    box-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+.portal-de-acceso a{
+    color: cyan;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    transition: 0.3s;
+    font-size: 1.5rem;
+}
+
+.crear-cuenta a {
+    color: cyan;
+    text-decoration: none;
+    display: block;
+    margin-top: 10px;
+    transition: 0.3s;
+    font-size: 2rem;
+}
+
+
+
+.portal-de-acceso a:hover, .crear-cuenta a:hover {
+    text-shadow: 0 0 10px cyan;
+}
+
+

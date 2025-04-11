@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Elemento Fuego{% endblock %}
+
+{% block content %}
+<main class="elemento-container elemento-fuego">
+
+    <section class="contenido-horizontal">
+        <div class="avatarFuego">
+            <!-- Contenedor para el modelo 3D -->
+            <div id="contenedor-3d-avatar_fuego_masculino" style="width: 100%; height: 400px;" title="Arrastra con el mouse para mover la vista. Usa la rueda para acercar o alejar."></div>
+        </div>
+
+        <section class="descripcion">
+            <h2>Elemento Fuego: Voluntad, Coraje y Transformación</h2>
+            <p>Eres el Fuego: la llama que impulsa el cambio, la pasión que enciende propósitos. 
+            Tu energía masculina arde con decisión, destruye lo que ya no sirve y forja nuevos comienzos. 
+            Eres acción, impulso y poder creador. No temes al riesgo: donde tú estás, la vida se enciende.</p>
+
+            <div class="acciones">
+                <a href="{% url 'mision_fuego_masculino' %}" class="btn btn-mision">Haz clic aquí para iniciar misión</a>
+                <br><br>
+                <a href="{% url 'elementos' %}" class="btn">Volver a los Elementos</a>
+            </div>
+        </section>
+    </section>
+</main>
+
+<!-- Script personalizado para cargar el modelo fuego masculino -->
+<script type="module" src="{% static 'js/avatar_fuego_masculino.js' %}"></script>
+
+{% endblock %}
