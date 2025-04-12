@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'appCrearteConscienteZ'
+    'appCrearteConscienteZ',
+    'user',
     ]
 
 MIDDLEWARE = [
@@ -142,3 +143,5 @@ EMAIL_HOST_USER = 'crearteconscientez@gmail.com'
 EMAIL_HOST_PASSWORD = 'xwee uxkt uokf yvmr'  # tu contraseña de aplicación
 EMAIL_USE_TLS = True
 
+# Override User
+AUTH_USER_MODEL = 'user.User'
