@@ -1,7 +1,11 @@
 # admin.py
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+<<<<<<< Updated upstream
 from user.models import CustomUser
+=======
+from user.models import CustomUser, ProgresoUsuario
+>>>>>>> Stashed changes
 
 @admin.register(CustomUser)
 class CustomUserAdmin(BaseUserAdmin):
@@ -16,3 +20,9 @@ class CustomUserAdmin(BaseUserAdmin):
         ('Permissions', {"fields": ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {"fields": ('last_login', 'date_joined')}),
     )
+
+@admin.register(ProgresoUsuario)
+class ProgresoUsuarioAdmin(admin.ModelAdmin):
+    list_display = ('user', 'avatar', 'mision_iniciada', 'mision_inicio_fecha')
+    search_fields = ('user__username', 'avatar')
+    list_filter = ('avatar', 'mision_iniciada')
