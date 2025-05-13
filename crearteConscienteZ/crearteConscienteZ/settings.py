@@ -148,4 +148,4 @@ EMAIL_HOST_PASSWORD = 'xwee uxkt uokf yvmr'  # tu contraseña de aplicación
 EMAIL_USE_TLS = True
 
 # Override User
-AUTH_USER_MODEL = 'user.User'
+AUTH_USER_MODEL = 'user.CustomUser'

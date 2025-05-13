@@ -34,8 +34,27 @@ def gracias (request):
 def home (request):
     return render(request,"home.html")
 
+from django.contrib.auth import authenticate, login
+from django.shortcuts import redirect
+
 def portalDeAcceso(request):
-    return render(request, 'portalDeAcceso.html')
+    print('DEBUG: Entrando a la vista portalDeAcceso')
+    error = None
+    if request.method == 'POST':
+        print('DEBUG: Método POST recibido')
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        print(f'DEBUG: Username recibido: {username}')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            print('DEBUG: Usuario autenticado correctamente')
+            login(request, user)
+            return redirect('elementos')
+        else:
+            print('DEBUG: Usuario o contraseña incorrectos')
+            error = 'Usuario o contraseña incorrectos.'
+    print(f'DEBUG: Error enviado al template: {error}')
+    return render(request, 'portalDeAcceso.html', {'error': error})
 
 
 def registroUsuario(request):
