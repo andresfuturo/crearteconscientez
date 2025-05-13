@@ -22,12 +22,15 @@
         <h1>Crearte ConscienteZ</h1>
         <p>Empieza Tu Viaje</p>
 
-        <input type="text" placeholder="Usuario">
-        <input type="password" placeholder="Contraseña">
-
-        <a href="{% url 'elementos' %}" class="boton-ingresar"> <!--Esta mal el hipervinculo-->
-            INGRESAR
-        </a>
+        <form method="POST" autocomplete="off">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Usuario" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
+            {% if error %}
+                <div class="form-errors" style="background:#d32f2f;color:#fff;padding:12px;border-radius:6px;margin-bottom:10px;font-weight:bold;text-align:center;">{{ error }}</div>
+            {% endif %}
+            <button type="submit" class="boton-ingresar">INGRESAR</button>
+        </form>
     </div>
 
     <div class="crear-cuenta">

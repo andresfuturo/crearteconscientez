@@ -18,6 +18,7 @@ from django.contrib import admin # type: ignore
 from django.urls import include, path # type: ignore
 
 from appCrearteConscienteZ import views
+from user import views as user_views
 
 
 
@@ -29,7 +30,7 @@ urlpatterns = [
     path('contacto/', views.contacto, name='contacto'),
     path('gracias/', views.gracias, name='gracias'),
     path('elementos/', views.elementos, name='elementos'),
-    path('portalDeAcceso/registroUsuario/', views.registroUsuario, name='registroUsuario'),
+    path('portalDeAcceso/registroUsuario/', user_views.registro, name='registroUsuario'),
     
     path('elemento_agua_femenina/', views.elemento_agua_femenina, name='elemento_agua_femenina'),
     path('elemento_tierra_femenina/', views.elemento_tierra_femenina, name='elemento_tierra_femenina'),
@@ -52,7 +53,7 @@ urlpatterns = [
     path('mision_aire_masculino/', views.mision_aire_masculino, name='mision_aire_masculino'),
     path('mision_agua_masculino/', views.mision_agua_masculino, name='mision_agua_masculino'),
 
- 
+    path('usuarios/', include('user.urls')),
 
 
 ]

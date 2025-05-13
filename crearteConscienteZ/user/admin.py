@@ -1,19 +1,24 @@
 # admin.py
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from user.models import User
+from user.models import CustomUser, ProgresoUsuario
 
-@admin.register(User)
+@admin.register(CustomUser)
 class CustomUserAdmin(BaseUserAdmin):
     fieldsets = (
         (None, {"fields": ('username', 'password')}),
         ('Personal Information', {
             "fields": (
                 'first_name', 'last_name', 'email',
-                'tipo_sangre', 'telefono',
-                'city', 'country', 'occupation', 'profile_picture'
+                'nombre', 'apellido', 'fecha_nacimiento'
             )
         }),
         ('Permissions', {"fields": ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {"fields": ('last_login', 'date_joined')}),
     )
+
+@admin.register(ProgresoUsuario)
+class ProgresoUsuarioAdmin(admin.ModelAdmin):
+    list_display = ('user', 'avatar', 'mision_iniciada', 'mision_inicio_fecha')
+    search_fields = ('user__username', 'avatar')
+    list_filter = ('avatar', 'mision_iniciada')
