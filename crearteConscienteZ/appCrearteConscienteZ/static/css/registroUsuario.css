@@ -1,52 +1,76 @@
-
-
-
 /* PAGINA DE  registro de usuario*/
 .registro-container {
     max-width: 400px;
-    padding: 20px 40px 20px 20px; 
+    padding: 30px 40px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     text-align: center;
     color: cyan;
     box-shadow: 0 0 15px cyan;
-
-
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: cyan;
+}
 
 .registro-container input {
     width: 100%;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 12px;
+    margin: 0;
     border: 1px solid cyan;
     background: black;
     color: white;
     border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.registro-container input:focus {
+    border-color: #00ffff;
+    outline: none;
 }
 
 .registro-container button {
     background: cyan;
     color: black;
     font-weight: bold;
-    padding: 10px;
+    padding: 12px;
     border: none;
     cursor: pointer;
     width: 100%;
     border-radius: 5px;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.registro-container button:hover {
+    background-color: #00ffff;
 }
 
 .registro-container a {
     color: cyan;
     text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
 }
 
 .registro-container a:hover {
     text-decoration: underline;
+    color: #00ffff;
 }
 
 /* estilos elementos estaticos simbolos */
@@ -65,4 +89,13 @@
 .element img {
     width: 70px; /* Ajusta el tamaño del logo */
     border-radius: 5px; /* Bordes redondeados sutiles */
+}
+
+.registro-container label {
+    display: block;
+    margin-top: 15px; /* separa del campo anterior */
+    margin-bottom: 5px; /* separa del input que etiqueta */
+    font-weight: bold;
+    color: cyan;
+    text-align: left; /* opcional si quieres alinear a la izquierda */
 }

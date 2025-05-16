@@ -24,8 +24,9 @@
 
         <form method="POST" autocomplete="off">
             {% csrf_token %}
-            <input type="text" name="username" placeholder="Usuario" required>
-            <input type="password" name="password" placeholder="Contraseña" required>
+            <input type="text" name="username" placeholder="Usuario" required autocomplete="new-username">
+            <input type="password" name="password" placeholder="Contraseña" required autocomplete="new-password">
+
             {% if error %}
                 <div class="form-errors" style="background:#d32f2f;color:#fff;padding:12px;border-radius:6px;margin-bottom:10px;font-weight:bold;text-align:center;">{{ error }}</div>
             {% endif %}
@@ -39,9 +40,5 @@
         <a href="{% url 'registroUsuario' %}" class="boton-crear-cuenta">Crear Cuenta</a>
     </div>
 </div>
-
-
-
-
 
 {% endblock %}
