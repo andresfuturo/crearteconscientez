@@ -1,6 +1,11 @@
 from django.shortcuts import  render
 from django.conf import settings
 from django.core.mail import send_mail
+from django.contrib.auth import authenticate, login
+from django.shortcuts import redirect
+from user.models import ProgresoUsuario
+from django.utils import timezone
+from django.contrib.auth.decorators import login_required
 
 
 def contacto(request):
@@ -34,8 +39,6 @@ def gracias (request):
 def home (request):
     return render(request,"home.html")
 
-from django.contrib.auth import authenticate, login
-from django.shortcuts import redirect
 
 def portalDeAcceso(request):
     print('DEBUG: Entrando a la vista portalDeAcceso')
@@ -60,8 +63,7 @@ def portalDeAcceso(request):
 def registroUsuario(request):
     return render(request, "registroUsuario.html") 
 
-from user.models import ProgresoUsuario
-from django.shortcuts import redirect
+
 
 def elementos(request):
     if request.user.is_authenticated:
@@ -89,9 +91,7 @@ def elemento_aire_femenina(request):
     return render(request, 'elementosFemeninos/elemento_aire_femenina.html')
 
 
-from django.utils import timezone
-from user.models import ProgresoUsuario
-from django.contrib.auth.decorators import login_required
+
 
 def redirigir_a_mision_activa(progreso, vista_actual=None):
     avatar_to_view = {
@@ -241,22 +241,6 @@ def elemento_aire_masculino(request):
 
 def elemento_agua_masculino(request):
     return render(request, 'elementosMasculinos/elemento_agua_masculino.html')
-
-
-
-
-
-def mision_fuego_masculino(request):
-    return render(request, 'misiones_masculinos/mision_fuego_masculino.html')
-
-def mision_tierra_masculino(request):
-    return render(request, 'misiones_masculinos/mision_tierra_masculino.html')
-
-def mision_aire_masculino(request):
-    return render(request, 'misiones_masculinos/mision_aire_masculino.html')
-
-def mision_agua_masculino(request):
-    return render(request, 'misiones_masculinos/mision_agua_masculino.html')
 
 
 

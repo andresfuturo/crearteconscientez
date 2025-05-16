@@ -1,9 +1,82 @@
 {% extends "base.html" %}
+{% load static %}
+
 {% block title %}Misión Tierra{% endblock %}
 
 {% block content %}
-<main class="mision">
-    <h1>Misión del Elemento Tierra</h1>
-    <p>Bienvenido a tu primera misión. Prepárate para reconectar con la fuerza y la estabilidad de la Tierra.</p>
+<main class="mision-container">
+    <section class="contenido-vertical">
+        <h1 class="titulo-mision">Misión Tierra</h1>
+
+        <div class="imagen-avatar">
+            <img src="{% static 'img/avatar_femenina_tierra.jpg' %}" alt="Avatar de la Tierra">
+        </div>
+
+        <div class="intro-con-imagen">   
+            <div class="imagen-maestro">
+                <img src="{% static 'img/diosa_gaia.png' %}" alt="Maestra de la Tierra">
+            </div>
+            <div class="intro-mision">
+                <p>A tus pies se extiende un bosque sagrado. Del suelo fértil emerge una figura serena con ojos de bosque profundo. Su presencia es firme, amorosa y poderosa.</p>
+                <p>“Bienvenida Guardiana de la Tierra, en ti habita la semilla de la vida. Hoy recordarás cómo enraizarte, cómo nutrirte desde dentro, y cómo crear con paciencia y presencia. Att: Madre Gaia”</p>
+            </div>
+        </div>   
+
+        <div class="contenedor-derecha">
+            <section class="desafios">
+                <h2>Desafíos de la Misión</h2>
+
+                <form id="misiones-form">
+                    <ul class="lista-desafios">
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio1">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Paseo Consciente:</h3>
+                                    <p>Camina descalza sobre tierra, pasto o arena. Siente el suelo bajo tus pies. Inhala profundamente y deja que la Tierra te sostenga.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio2">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Ritual de Enraizamiento:</h3>
+                                    <p>Siéntate con la espalda recta. Visualiza raíces creciendo desde tu cuerpo hacia el centro de la Tierra. Respira y siente estabilidad y calma.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio3">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Alimento Consciente:</h3>
+                                    <p>Prepara y come un alimento nutritivo con plena atención. Agradece a la Tierra por cada ingrediente que te sustenta.</p>
+                                </div>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="checkbox-personalizado">
+                                <input type="checkbox" name="desafio4">
+                                <span class="checkmark"></span>
+                                <div class="contenido-desafio">
+                                    <h3>Mantra de Estabilidad:</h3>
+                                    <p>Repite en voz alta: “Estoy enraizada. Soy firme. Soy abundancia.” Hazlo mientras respiras profundo y colocas tus manos sobre tu abdomen.</p>
+                                </div>
+                            </label>
+                        </li>
+                    </ul>
+
+                    <button type="submit" class="btn-misiones">🌱 Misiones cumplidas</button>
+                </form>
+
+                <p class="frase-cierre">
+                    <em>“Cuando estás enraizada, puedes sostener mundos enteros.”</em>
+                </p>
+            </section>
+        </div>
 </main>
 {% endblock %}

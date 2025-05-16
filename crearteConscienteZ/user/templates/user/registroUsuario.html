@@ -7,14 +7,14 @@
 
 {% block content %}
 <div class="registro-container">
-    {% if registro_exitoso %}
+    {% if registro_exitoso %} <!-- registro_exitoso es una funcion (def) que viene de (views.py) de la misma app.  -->
       <div class="success-message">Registro realizado</div>
       <a href="{% url 'portalDeAcceso' %}" class="btn-login">Ir a iniciar sesión</a>
     {% else %}
       <h1>Crear Cuenta</h1>
       <p>Únete a Crearte ConscienteZ</p>
 
-      {% if form.errors %}
+      {% if form.errors %}  <!-- se usa para mostrar mensajes de error si el formulario no es válido -->
       <div class="form-errors">
         {{ form.errors }}
       </div>
