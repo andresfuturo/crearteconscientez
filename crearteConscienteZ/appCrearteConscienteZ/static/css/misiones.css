@@ -17,20 +17,21 @@ h1.titulo-mision {
     justify-content: flex-start;/* No distribuye el espacio */
     gap: 1rem;                  /* Espacio entre imagen y texto */
     flex-wrap: nowrap;          /* No permite que se apilen */
-    padding: 10px 300px 10px 200px;
+    padding: 5px 300px 10px 200px;
 }
 
 /* Contenedor de la imagen */
 .imagen-maestro {
     flex: 0 0 auto;             /* No crece ni se encoge */
     display: flex;
+    width: 180px;
     justify-content: center;
     align-items: center;
 }
 
 /* Imagen en sí */
 .imagen-maestro img {
-    width: 150px;               /* Tamaño fijo de la imagen */
+    width: 50px;               /* Tamaño fijo de la imagen */
     height: auto;
     border-radius: 10px;        /* Bordes redondeados */
 }
@@ -40,7 +41,7 @@ h1.titulo-mision {
     flex: 1;                    /* Ocupa el resto del espacio disponible */
     color: white;
     margin: 0;
-    padding: 20px 90px 10px 40px;
+    padding: 3px 90px 10px 40px;
     line-height: 1.5;           /* Espaciado de línea cómodo para leer */
 }
 
