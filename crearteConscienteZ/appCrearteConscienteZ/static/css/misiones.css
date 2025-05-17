@@ -9,39 +9,52 @@ h1.titulo-mision {
 }
 
 
-
-.intro-mision {
-    font-size: 18px;
-    color: #ffffff;
-    text-align: center;
-    max-width: 800px;
-    margin-right: 600px;
-}
-
-
+/* Contenedor principal: imagen y texto en fila */
 .intro-con-imagen {
     display: flex;
-    align-items: center; /* centra verticalmente si los elementos tienen alturas distintas */
-    justify-content: center; /* opcional, para centrar todo horizontalmente */
-    gap: 20px; /* espacio entre texto e imagen */
-    justify-content: space-between;
+    flex-direction: row;        /* Imagen izquierda, texto derecha */
+    align-items: flex-start;    /* Alineación vertical superior */
+    justify-content: flex-start;/* No distribuye el espacio */
+    gap: 1rem;                  /* Espacio entre imagen y texto */
+    flex-wrap: nowrap;          /* No permite que se apilen */
+    padding: 10px 300px 10px 200px;
 }
 
-.intro-mision {
-    font-size: 18px;
-    color: #ffffff;
-    text-align: left;
-    
-}
-
+/* Contenedor de la imagen */
 .imagen-maestro {
-    width: 200px;
+    flex: 0 0 auto;             /* No crece ni se encoge */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Imagen en sí */
+.imagen-maestro img {
+    width: 150px;               /* Tamaño fijo de la imagen */
     height: auto;
-    border: 3px solid #00ffff;
-    border-radius: 15px;
-    position: relative;
-    left: 300px; /* mueve a la derecha */
-    
+    border-radius: 10px;        /* Bordes redondeados */
+}
+
+/* Contenedor del texto */
+.intro-mision {
+    flex: 1;                    /* Ocupa el resto del espacio disponible */
+    color: white;
+    margin: 0;
+    padding: 20px 90px 10px 40px;
+    line-height: 1.5;           /* Espaciado de línea cómodo para leer */
+}
+
+
+/* Media query para pantallas pequeñas */
+@media (max-width: 768px) {
+    .intro-con-imagen {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .intro-mision {
+        text-align: center;
+    }
 }
 
 
@@ -68,8 +81,7 @@ h1.titulo-mision {
   
   .contenedor-derecha {
     display: flex;
-    justify-content: flex-end;
-    padding: 20px;
+    padding: 10px 0px 0px 50px;
 }
 
 .desafios {
@@ -206,45 +218,3 @@ h2 {
 
 
   
-
-
-
-/* =====================
-   RESPONSIVE DESIGN
-===================== */
-
-@media screen and (max-width: 768px) {
-
-    h1.titulo-mision {
-        font-size: 40px !important;
-        margin-top: 40px;
-    }
-
-    .intro-mision {
-        margin-top: 0px;
-        padding: 0 15px;
-        font-size: 16px;
-    }
-
-    .contenedor-derecha {
-        justify-content: center;
-        padding: 10px;
-    }
-
-    .desafios {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .imagen-avatar {
-        right: 0;
-        margin: 20px auto;
-        display: block;
-    }
-
-    .imagen-maestro {
-        display: block;
-        margin: 20px auto;
-    }
-}
-
