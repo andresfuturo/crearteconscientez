@@ -6,28 +6,14 @@
 {% endblock %}
 
 {% block content %}
-
-<p class="descripcion-elemento">Selecciona el símbolo que resuene contigo y descubre el poder de tu avatar.</p>
-
     <div class="element-selection">
-        <h1>Elige tu elemento</h1>
+        <h1>Elige tu Avatar</h1>
 
         <div class="elements-container" id="elements-container">
-            <a href="{% url 'elemento_tierra_femenina' %}" class="element" data-tooltip="Tierra: Estabilidad y Fortaleza">
                 <img src="{% static 'img/simboloTierra.jpg' %}" alt="Tierra" title="Tierra"> 
-            </a>
-            
-            <a href="{% url 'elemento_agua_femenina' %}" class="element" data-tooltip="Agua: Fluidez y Adaptabilidad">
                 <img src="{% static 'img/simboloAgua.jpg' %}" alt="Agua" title="Agua">
-            </a>
-            
-            <a href="{% url 'elemento_fuego_femenina' %}" class="element" data-tooltip="Fuego: Pasión y Energía">
                 <img src="{% static 'img/simboloFuego.jpg' %}" alt="Fuego" title="Fuego">
-            </a>
-            
-            <a href="{% url 'elemento_aire_femenina' %}" class="element" data-tooltip="Aire: Libertad y Conocimiento">
                 <img src="{% static 'img/simboloAire.jpg' %}" alt="Aire" title="Aire">
-            </a>  
         </div>
 
 
@@ -79,37 +65,6 @@
     </div>
 </div>
 <!--*************************************************************************************************************-->
-
-
-<div class="elements-container" id="elements-container">
-    <a href="{% url 'elemento_tierra_masculino' %}" class="element" data-tooltip="Tierra: Estabilidad y Fortaleza">
-        <img src="{% static 'img/simboloTierra.jpg' %}" alt="Tierra" title="Tierra Masculina"> 
-    </a>
-    
-    <a href="{% url 'elemento_agua_masculino' %}" class="element" data-tooltip="Agua: Fluidez y Adaptabilidad">
-        <img src="{% static 'img/simboloAgua.jpg' %}" alt="Agua" title="Agua Masculina">
-    </a>
-    
-    <a href="{% url 'elemento_fuego_masculino' %}" class="element" data-tooltip="Fuego: Pasión y Energía">
-        <img src="{% static 'img/simboloFuego.jpg' %}" alt="Fuego" title="Fuego Masculina">
-    </a>
-    
-    <a href="{% url 'elemento_aire_masculino' %}" class="element" data-tooltip="Aire: Libertad y Conocimiento">
-        <img src="{% static 'img/simboloAire.jpg' %}" alt="Aire" title="Aire Masculina">
-    </a>  
-</div>
-
-
-
-            
-
-
-
-
-
-
-
-
 
 
 

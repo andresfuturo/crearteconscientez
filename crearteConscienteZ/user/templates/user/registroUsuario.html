@@ -6,19 +6,22 @@
 {% endblock %}
 
 {% block content %}
-<div class="registro-container">
-    {% if registro_exitoso %} <!-- registro_exitoso es una funcion (def) que viene de (views.py) de la misma app.  -->
-      <div class="success-message">Registro realizado</div>
-      <a href="{% url 'portalDeAcceso' %}" class="btn-login">Ir a iniciar sesión</a>
-    {% else %}
-      <h1>Crear Cuenta</h1>
-      <p>Únete a Crearte ConscienteZ</p>
+{% if registro_exitoso %}
+  <div class="registro-exitoso-container">  
+    <div class="success-message">Registro realizado</div>
+    <a href="{% url 'portalDeAcceso' %}" class="btn-login">Ir a iniciar sesión</a>
+  </div>
+{% else %}
+  <div class="registro-container">
+    <h1>Crear Cuenta</h1>
+    <p>Únete a Crearte ConscienteZ</p>
 
-      {% if form.errors %}  <!-- se usa para mostrar mensajes de error si el formulario no es válido -->
+    {% if form.errors %}
       <div class="form-errors">
         {{ form.errors }}
       </div>
     {% endif %}
+
     <form method="POST" autocomplete="off">
         {% csrf_token %}
         {% if form.non_field_errors %}
@@ -27,10 +30,10 @@
             </div>
         {% endif %}
 
-        <input type="text" name="username" placeholder="Nombre de Usuario" value="{{ form.username.value|default_if_none:'' }}" required>
+        <input type="text" name="username" placeholder="Nombre de Usuario" value="{{ form.username.value|default_if_none:'' }}">
         {% if form.username.errors %}<div class="field-error">{{ form.username.errors }}</div>{% endif %}
 
-        <input type="email" name="email" placeholder="Correo Electrónico" value="{{ form.email.value|default_if_none:'' }}" required>
+        <input type="email" name="email" placeholder="Correo Electrónico" value="{{ form.email.value|default_if_none:'' }}">
         {% if form.email.errors %}<div class="field-error">{{ form.email.errors }}</div>{% endif %}
 
         <input type="password" name="password1" placeholder="Contraseña" required>
@@ -39,11 +42,11 @@
         <input type="password" name="password2" placeholder="Confirmar Contraseña" required>
         {% if form.password2.errors %}<div class="field-error">{{ form.password2.errors }}</div>{% endif %}
 
-        <label for="nombre">Nombre:</label>
+        <label for="nombre">Nombres:</label>
         <input type="text" id="nombre" name="nombre" value="{{ form.nombre.value|default_if_none:'' }}" required>
         {% if form.nombre.errors %}<div class="field-error">{{ form.nombre.errors }}</div>{% endif %}
 
-        <label for="apellido">Apellido:</label>
+        <label for="apellido">Apellidos:</label>
         <input type="text" id="apellido" name="apellido" value="{{ form.apellido.value|default_if_none:'' }}" required>
         {% if form.apellido.errors %}<div class="field-error">{{ form.apellido.errors }}</div>{% endif %}
 
@@ -56,6 +59,6 @@
 
     <p>¿Ya tienes cuenta?</p>
     <a href="{% url 'portalDeAcceso' %}">Iniciar Sesión</a>
-</div>
+  </div>
 {% endif %}
 {% endblock %}

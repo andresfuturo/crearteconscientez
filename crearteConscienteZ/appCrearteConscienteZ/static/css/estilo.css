@@ -126,12 +126,12 @@ body {
 }
 
 .content h1 {
-    font-size: 60px; /* Tamaño de la letra del título */
-    font-family: "Arial", sans-serif; /* Tipo de letra */
+    font-size: 30px; /* Tamaño de la letra del título */
+  
 }
 
 .content .subtitle {
-    font-size: 30px; /* Tamaño de la letra del subtítulo */
+    font-size: 15px; /* Tamaño de la letra del subtítulo */
     font-family: "Verdana", sans-serif; /* Tipo de letra */
 }
 
@@ -163,11 +163,10 @@ body {
     transform: scale(1.1);
 }
 
-.element-selection {
-    text-align: center;
-    color: white;
-    margin-top: 50px;
+.element-selection h1 {
+    margin-top: 100px; /* Aumenta o reduce según lo que necesites */
 }
+
 
 .elements-container {
     display: flex;
@@ -241,17 +240,34 @@ body {
 
 
 
+.elements-container img {
+    width: 50px;   /* Cambia este valor al tamaño deseado */
+    height: auto;   /* Mantiene la proporción */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    transition: transform 0.3s ease;
+}
+
+.elements-container img:hover {
+    transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+}
+
+
+
+
+
+
 
 /* Carousel*-------------------------------------------------------------------------- */
 
 
 .carousel {
-    height: 400px; /* Ajusta según lo que quieras */
+     margin-top: -50px;
+
 }
 
 .carousel .carousel-item {
     width: 500px !important; /* Importante: sobrescribe el estilo JS */
-    height: 400px !important;
+    height: 300px!important;
     overflow: visible !important;
     display: flex !important;
 }
@@ -405,3 +421,4 @@ body {
 .gracias-container a:hover {
     background-color: white;
 }
+
