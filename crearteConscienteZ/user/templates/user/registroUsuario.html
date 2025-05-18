@@ -16,9 +16,19 @@
     <h1>Crear Cuenta</h1>
     <p>Únete a Crearte ConscienteZ</p>
 
+    {% if form.non_field_errors %}
+      <div class="alert-error">
+        {{ form.non_field_errors|join:'<br>' }}
+      </div>
+    {% endif %}
+
     {% if form.errors %}
-      <div class="form-errors">
-        {{ form.errors }}
+      <div class="alert-error">
+        {% for field in form %}
+          {% if field.errors %}
+            <p>{{ field.label }}: {{ field.errors|join:'<br>' }}</p>
+          {% endif %}
+        {% endfor %}
       </div>
     {% endif %}
 

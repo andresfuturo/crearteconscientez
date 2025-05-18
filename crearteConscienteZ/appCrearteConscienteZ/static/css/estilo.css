@@ -23,9 +23,10 @@ body {
   min-height: 100vh;
 }
 
-/* Contenido crece y empuja el footer hacia abajo */
-.content {
+/* Main content grows and pushes footer down */
+main {
   flex: 1;
+  margin-top: 60px; /* Espacio para la navbar fija */
 }
 
 /* Estilo del footer */
@@ -129,6 +130,13 @@ body {
 }
 
 /* 🔹 PUERTAS */
+.door-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .door {
     width: 50%;
     height: 100%;
@@ -136,6 +144,7 @@ body {
     background: linear-gradient(90deg, #4d2e1f, #7b4f34, #4d2e1f);
     border: 5px solid #3b2416;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    top: 0;
 }
 
 /* 🔹 POSICIONAMIENTO */
@@ -168,13 +177,36 @@ body {
     }
 }
 
-/* Aplica la animación */
+/* 🔹 CONTENIDO PRINCIPAL */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards 2s;
+}
+
+/* Ajustar la animación de las puertas */
 .door.left {
     animation: openDoors 2s ease-in-out forwards;
 }
 
 .door.right {
     animation: openDoorsRight 2s ease-in-out forwards;
+}
+
+/* Animación de fade-in para el contenido */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* 🔹 CONTENIDO PRINCIPAL */

@@ -1,17 +1,16 @@
 /* PAGINA DE  registro de usuario*/
 .registro-container {
     width: 90%;
-    max-width: 500px; /* Ajusta el ancho máximo deseado */
+    max-width: 500px;
     padding: 0px 40px;
     background: rgba(0, 0, 0, 0.8);
     border-radius: 10px;
     text-align: center;
     color: cyan;
     box-shadow: 0 0 10px cyan;
-    position: absolute ;
-    top: 75%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 50px auto;
+    position: relative;
+    padding-top: 30px;
 }
 
 .registro-container h1 {
