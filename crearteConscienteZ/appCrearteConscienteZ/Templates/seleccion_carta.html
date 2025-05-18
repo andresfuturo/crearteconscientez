@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="contenedor-seleccion">
+    <section class="seleccion-cartas">
+        <h2>✨ Haz completado tu primera misión✨</h2>
+        <h2> como regalo escoge tu carta del destino</h2>
+        <div class="cartas-tarot">
+            <div class="carta" onclick="seleccionarCarta('1')">
+                <img src="{% static 'img/carta1.jpg' %}" alt="Carta 1">
+                <h3>Pasado</h3>
+            </div>
+            <div class="carta" onclick="seleccionarCarta('2')">
+                <img src="{% static 'img/carta1.jpg' %}" alt="Carta 2">
+                <h3>Presente</h3>
+            </div>
+            <div class="carta" onclick="seleccionarCarta('3')">
+                <img src="{% static 'img/carta1.jpg' %}" alt="Carta 3">
+                <h3>Futuro</h3>
+            </div>
+        </div>
+
+        <div id="mensaje-seleccionado" class="hidden">
+            <h3>Mensaje de tu carta seleccionada:</h3>
+            <p id="texto-mensaje"></p>
+            <button onclick="continuar()">Continuar ✨</button>
+        </div>
+    </section>
+</main>
+
+{% endblock %}

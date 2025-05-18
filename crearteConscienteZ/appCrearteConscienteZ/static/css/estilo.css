@@ -651,3 +651,83 @@ main {
   background-color: #e6b83b;
   color: #222;
 }
+
+
+.contenedor-seleccion {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* ------------------------------------------------------------- */
+.seleccion-cartas h2:first-of-type {
+    font-size: 2rem;
+    color: #ffde9f;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 222, 159, 0.6);
+}
+
+.seleccion-cartas h2:last-of-type {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    margin: 0.5rem auto 2rem;
+    display: block;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.cartas-tarot {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.carta {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #ffb347;
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 15px #ffb347;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.carta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ffb347;
+}
+
+.carta img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carta h3 {
+    margin-top: 1rem;
+    color: #fcc23b; /* Dorado */
+    text-shadow:
+        0 0 5px #4b0082,
+        0 0 10px #4b0082,
+        0 0 15px #4b0082;
+    animation: resplandorMistico 2s infinite alternate;
+}
+
+/* Animación del resplandor */
+@keyframes resplandorMistico {
+    0% {
+        text-shadow:
+            0 0 2px #4b0082,
+            0 0 4px #4b0082,
+            0 0 6px #4b0082;
+    }
+    100% {
+        text-shadow:
+            0 0 10px #fcc23b,
+            0 0 20px #fcc23b,
+            0 0 30px #4b0082;
+    }
+}
+

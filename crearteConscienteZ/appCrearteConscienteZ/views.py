@@ -243,6 +243,10 @@ def elemento_aire_masculino(request):
 def elemento_agua_masculino(request):
     return render(request, 'elementosMasculinos/elemento_agua_masculino.html')
 
+@login_required
+def seleccion_carta(request):
+    return render(request, 'seleccion_carta.html')
+
 
 
 
