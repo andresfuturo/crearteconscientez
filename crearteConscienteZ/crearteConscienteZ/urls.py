@@ -19,7 +19,7 @@ from django.urls import include, path # type: ignore
 
 from appCrearteConscienteZ import views
 from user import views as user_views
-
+from appCrearteConscienteZ.views import manual_view
 
 
 urlpatterns = [
@@ -54,6 +54,7 @@ urlpatterns = [
     path('mision_agua_masculino/', views.mision_agua_masculino, name='mision_agua_masculino'),
 
     path('usuarios/', include('user.urls')),
+    path('manual/', manual_view, name='manual'),
 
 
 ]

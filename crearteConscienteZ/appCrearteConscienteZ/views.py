@@ -32,7 +32,8 @@ def gracias (request):
     return render(request,"gracias.html")
 
 
-
+def manual_view(request):
+    return render(request, 'manual.html')
 
 
 # Create your views here.

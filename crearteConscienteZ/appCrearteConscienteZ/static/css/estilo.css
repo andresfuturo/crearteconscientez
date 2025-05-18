@@ -15,6 +15,30 @@ body {
     text-size-adjust: 100%;
 }
 
+
+/* Contenedor principal en modo columna */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenido crece y empuja el footer hacia abajo */
+.content {
+  flex: 1;
+}
+
+/* Estilo del footer */
+.footer {
+  text-align: center;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+
+}
+
+
 /* 🔹 NAVEGACIÓN */
 .navbar {
     width: 100%;
@@ -461,4 +485,137 @@ body {
 .gracias-container a:hover {
     background-color: white;
 }
+.start-button, .manual-button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
+/* Botón Comenzar en amarillo */
+.start-button {
+    background-color: #f1c40f; /* amarillo brillante */
+    color: #333; /* texto oscuro para contraste */
+    box-shadow: 0 4px 8px rgba(241, 196, 15, 0.5);
+}
+
+.start-button:hover {
+    background-color: #d4ac0d;
+    color: #222;
+    
+}
+
+/* Botón Manual con estilo libro */
+.manual-button {
+    background-color: #34495e; /* gris oscuro */
+    position: relative;
+    padding-left: 45px; /* espacio para el ícono */
+}
+
+/* Icono libro con CSS puro */
+.manual-button::before {
+    content: "\1F4D6"; /* emoji libro abierto 📖 */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+/* ------------------------------------------------------------------------------------------------*/
+.manual-container {
+  max-width: 720px;
+  margin: 50px auto;
+  background-color: #fffef5;
+  padding: 40px 50px;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  font-family: 'Georgia', serif;
+  color: #3e3e3e;
+  line-height: 1.7;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%),
+    repeating-linear-gradient(
+      0deg,
+      #f8f4e8,
+      #f8f4e8 10px,
+      #fffef5 10px,
+      #fffef5 20px
+    );
+}
+
+.manual-titulo {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 2.8rem;
+  text-align: center;
+  color: #8b6e4a;
+  text-shadow: 1px 1px 0 #f9f3e7;
+}
+
+.manual-section {
+  margin-bottom: 40px;
+}
+
+.manual-subtitulo {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #d8cfc0;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  color: #6e5a38;
+}
+
+.manual-lista {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.manual-lista li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.manual-parrafo {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.manual-codigo {
+  background-color: #f4f1e0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.manual-footer {
+  margin-top: 60px;
+  text-align: center;
+  font-style: italic;
+  color: #7a6e5f;
+}
+
+.manual-footer .btn-registro {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 30px;
+  background-color: #f2c94c; /* amarillo */
+  color: #3e3e3e;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(242, 201, 76, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.manual-footer .btn-registro:hover {
+  background-color: #e6b83b;
+  color: #222;
+}

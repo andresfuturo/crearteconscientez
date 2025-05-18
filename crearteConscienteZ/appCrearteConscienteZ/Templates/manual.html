@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Manual de Usuario{% endblock %}
+
+{% block content %}
+<div class="manual-container">
+  <h1 class="manual-titulo">Manual de Usuario</h1>
+  <h1 class="manual-titulo">Crearte ConscienteZ</h1>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">1. Introducción</h2>
+    <p class="manual-parrafo">Crearte ConscienteZ es una experiencia interactiva donde el usuario se embarca en un viaje de transformación personal a través de avatares, misiones y cartas simbólicas.</p>
+  </section>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">2. Registro y Selección de Avatar</h2>
+    <ul class="manual-lista">
+      <li>El usuario se registra con correo y contraseña.</li>
+      <li>Luego debe escoger un avatar basado en los 4 elementos (agua, tierra, fuego, aire) y su polaridad (femenino o masculino).</li>
+      <li>Ejemplo: Agua Femenino, Tierra Masculino, etc.</li>
+      <li>Este avatar queda vinculado al usuario y no se puede cambiar.</li>
+    </ul>
+  </section>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">3. Misiones</h2>
+    <p class="manual-parrafo">Cada avatar tiene una serie de misiones propias, las cuales deben completarse en orden.</p>
+    <ul class="manual-lista">
+      <li>Las misiones son distintas según el elemento y la energía (F/M).</li>
+      <li>Al finalizar una misión, se desbloquea la siguiente.</li>
+    </ul>
+  </section>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">4. Juego de la Carta</h2>
+    <p class="manual-parrafo">Al completar las misiones, se accede al juego de la carta:</p>
+    <ul class="manual-lista">
+      <li>El usuario escoge una carta de manera aleatoria o guiada.</li>
+      <li>Cada carta contiene un mensaje específico.</li>
+      <li>El mensaje puede estar relacionado con el avatar y su camino.</li>
+    </ul>
+  </section>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">5. Progreso y Recompensas</h2>
+    <p class="manual-parrafo">El sistema guarda automáticamente el progreso del usuario. Se pueden desbloquear:</p>
+    <ul class="manual-lista">
+      <li>Misiones avanzadas.</li>
+      <li>Nuevas cartas o caminos alternativos.</li>
+    </ul>
+  </section>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">6. Navegación</h2>
+    <p class="manual-parrafo">El menú principal incluye:</p>
+    <ul class="manual-lista">
+      <li><code class="manual-codigo">Perfil</code>: ver tu avatar y progreso.</li>
+      <li><code class="manual-codigo">Misiones</code>: acceso a misiones activas.</li>
+      <li><code class="manual-codigo">Cartas</code>: historial de cartas recibidas.</li>
+      <li><code class="manual-codigo">Configuración</code>: ajustes de cuenta.</li>
+    </ul>
+  </section>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">7. Glosario</h2>
+    <ul class="manual-lista">
+      <li><strong>Avatar:</strong> tu identidad energética en el juego.</li>
+      <li><strong>Misión:</strong> desafío o actividad para avanzar.</li>
+      <li><strong>Carta:</strong> mensaje simbólico que guía tu camino.</li>
+    </ul>
+  </section>
+
+  <section class="manual-section">
+    <h2 class="manual-subtitulo">8. Preguntas Frecuentes</h2>
+    <ul class="manual-lista">
+      <li><strong>¿Puedo cambiar mi avatar?</strong> No, una vez elegido, es parte de tu historia.</li>
+      <li><strong>¿Puedo repetir misiones?</strong> No, pero puedes revisar tu progreso.</li>
+      <li><strong>¿Puedo sacar más de una carta?</strong> Solo cuando el sistema lo habilite tras nuevas misiones.</li>
+    </ul>
+  </section>
+
+  <footer class="manual-footer">
+    <p>© 2025 Crearte ConscienteZ. Todos los derechos reservados.</p>
+    <a href="{% url 'portalDeAcceso' %}" class="btn-registro">Registrar Usuario</a>
+  </footer>
+</div>
+{% endblock %}
