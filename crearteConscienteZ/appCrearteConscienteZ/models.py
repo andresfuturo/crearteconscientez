@@ -1,6 +1,7 @@
 # models.py
 from django.db import models
 
+
 class Avatar(models.Model):
     nombre = models.CharField(max_length=100)
     nivel = models.IntegerField(default=1)
@@ -14,4 +15,4 @@ class Avatar(models.Model):
         return self.nombre
 
     class Meta:
-        db_table = 'appcrearteconscientez_avatar'  # Personalizando el nombre de la tabla de avatares
+        db_table = "appcrearteconscientez_avatar"  # Personalizando el nombre de la tabla de avatares

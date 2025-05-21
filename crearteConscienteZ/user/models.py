@@ -2,6 +2,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class CustomUser(AbstractUser):
     nombre = models.CharField(max_length=30)
     apellido = models.CharField(max_length=30)
@@ -12,11 +13,11 @@ class CustomUser(AbstractUser):
 class ProgresoUsuario(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
     avatar = models.CharField(max_length=30, choices=[
-        ('aire_femenina', 'Aire Femenina'),
-        ('fuego_femenina', 'Fuego Femenina'),
-        ('agua_femenina', 'Agua Femenina'),
-        ('tierra_femenina', 'Tierra Femenina'),
-    
+        ("aire_femenina", "Aire Femenina"),
+        ("fuego_femenina", "Fuego Femenina"),
+        ("agua_femenina", "Agua Femenina"),
+        ("tierra_femenina", "Tierra Femenina"),
+
     ])
     mision_iniciada = models.BooleanField(default=False)
     mision_inicio_fecha = models.DateTimeField(null=True, blank=True)
