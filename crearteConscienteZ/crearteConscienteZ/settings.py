@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde .env
+load_dotenv()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-1j6c)ryu9mg$mj7j@s7v84pjcgkhc&-db3-6)#(wp2lrvv^knz"
+SECRET_KEY = os.getenv("SECRET_KEY", "django-insecure-1j6c)ryu9mg$mj7j@s7v84pjcgkhc&-db3-6)#(wp2lrvv^knz")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -124,7 +129,7 @@ MEDIA_URL = "/media/"  # ruta para la carpeta que contendra los archivos media w
 MEDIA_ROOT =  BASE_DIR / "media" #cambia MEDIA_ROOT para que apunte a la nueva carpeta se creara una nueva carpeta qeu se llama media
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "appCrearteConscienteZ/static"),
+    BASE_DIR / "appCrearteConscienteZ/static",
 ]
 
 
@@ -139,8 +144,8 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "crearteconscientez@gmail.com"
-EMAIL_HOST_PASSWORD = "xwee uxkt uokf yvmr"  # tu contraseña de aplicación
+EMAIL_HOST_USER = os.getenv("EMAIL_HOST_USER", "")
+EMAIL_HOST_PASSWORD = os.getenv("EMAIL_HOST_PASSWORD", "")
 EMAIL_USE_TLS = True
 
 # Override User

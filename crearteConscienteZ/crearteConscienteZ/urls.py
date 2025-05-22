@@ -17,8 +17,8 @@ Including another URLconf
 """
 from appCrearteConscienteZ import views
 from appCrearteConscienteZ.views import manual_view
-from django.contrib import admin  # type: ignore
-from django.urls import include, path  # type: ignore
+from django.contrib import admin  # type: ignore[import]
+from django.urls import include, path  # type: ignore[import]
 from user import views as user_views
 
 urlpatterns = [
