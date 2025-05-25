@@ -6,23 +6,38 @@
     <section class="seleccion-cartas">
         <h2>✨ Haz completado tu primera misión✨</h2>
         <h2> como regalo escoge tu carta del destino</h2>
+
+        <!-- Sección de tarot egipcio -->
         <div class="cartas-tarot">
-            <div class="carta" onclick="seleccionarCarta('1')">
+            <div class="carta">
+                <img id="cartaEgipcia" src="{% static 'img/carta-back.png' %}" alt="Carta Egipcia" onclick="seleccionarCarta()">
+                <h3>Revelar Carta Egipcia</h3>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal-tarot"></div>
+        <script>
+            // Definir la URL base estática
+            const STATIC_URL = '{% static "" %}';
+        </script>
+        <script src="{% static 'js/carta_tarot.js' %}"></script>
+
+
+         <!-- Sección de mensaje pasado, presente y futuro -->
+        <div class="cartas-tarot">
+            <div class="carta">
                 <img src="{% static 'img/carta-back.png' %}" alt="Carta 1">
                 <h3>Pasado</h3>
             </div>
-            <div class="carta" onclick="seleccionarCarta('2')">
+            <div class="carta">
                 <img src="{% static 'img/carta-back.png' %}" alt="Carta 2">
                 <h3>Presente</h3>
             </div>
-            <div class="carta" onclick="seleccionarCarta('3')">
+            <div class="carta">
                 <img src="{% static 'img/carta-back.png' %}" alt="Carta 3">
                 <h3>Futuro</h3>
             </div>
         </div>
-
-        </div>
     </section>
 </main>
-
 {% endblock %}
