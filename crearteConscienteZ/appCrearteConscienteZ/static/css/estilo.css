@@ -1,12 +1,42 @@
 /* 🔹 CONFIGURACIÓN GENERAL */
 body {
     font-family: Arial, sans-serif;
-    background-image: url('/static/img/fondo.jpg'); /* Asegúrate de que la ruta sea correcta */
-    background-size: cover; /* Ajusta la imagen para que cubra toda la pantalla */
-    background-position: center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    background-attachment: fixed; /* Hace que el fondo no se mueva */
+    background-image: url('/static/img/fondo.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     padding: 0;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+
+/* Contenedor principal en modo columna */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main content grows and pushes footer down */
+main {
+  flex: 1;
+  margin-top: 60px; /* Espacio para la navbar fija */
+}
+
+/* Estilo del footer */
+.footer {
+  text-align: center;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+
 }
 
 
@@ -17,38 +47,24 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 30px; /* Espacio interno */
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semi-transparente */
-    position: fixed; /* Fija la barra arriba */
+    padding: 10px 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 100;
+    box-sizing: border-box;
 }
 
 /* 🔹 LOGO */
 .logo img {
-    height: 50px;
+    height: 40px;
+    max-width: 100%;
 }
 
 /* 🔹 ENLACES DEL MENÚ */
-/* 🔹 BARRA DE NAVEGACIÓN */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: black;
-    padding: 15px 30px;
-    width: 100%;
-    flex-wrap: nowrap; /* Evita que los elementos se envuelvan */
-}
-
-/* 🔹 LOGO */
-.logo img {
-    height: 50px; /* Ajusta el tamaño del logo */
-}
-
-/* 🔹 MENÚ DE NAVEGACIÓN */
 .nav-links {
+    display: flex;
     list-style: none;
     display: flex;
     gap: 40px; /* Espacio entre los elementos */
@@ -77,8 +93,50 @@ body {
     color: #FFD700; /* Amarillo dorado al pasar el cursor */
 }
 
+/* 🔹 MEDIA QUERIES */
+@media screen and (max-width: 1024px) {
+    .nav-links {
+        gap: 20px;
+    }
+    
+    .nav-links a {
+        font-size: 16px;
+        padding: 0px 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .logo img {
+        height: 30px;
+    }
+    
+    .navbar {
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 25px;
+    }
+    
+    .navbar {
+        padding: 8px;
+    }
+}
 
 /* 🔹 PUERTAS */
+.door-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .door {
     width: 50%;
     height: 100%;
@@ -86,6 +144,7 @@ body {
     background: linear-gradient(90deg, #4d2e1f, #7b4f34, #4d2e1f);
     border: 5px solid #3b2416;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+    top: 0;
 }
 
 /* 🔹 POSICIONAMIENTO */
@@ -118,13 +177,36 @@ body {
     }
 }
 
-/* Aplica la animación */
+/* 🔹 CONTENIDO PRINCIPAL */
+.content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards 2s;
+}
+
+/* Ajustar la animación de las puertas */
 .door.left {
     animation: openDoors 2s ease-in-out forwards;
 }
 
 .door.right {
     animation: openDoorsRight 2s ease-in-out forwards;
+}
+
+/* Animación de fade-in para el contenido */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 /* 🔹 CONTENIDO PRINCIPAL */
@@ -140,12 +222,12 @@ body {
 }
 
 .content h1 {
-    font-size: 60px; /* Tamaño de la letra del título */
-    font-family: "Arial", sans-serif; /* Tipo de letra */
+    font-size: 30px; /* Tamaño de la letra del título */
+  
 }
 
 .content .subtitle {
-    font-size: 30px; /* Tamaño de la letra del subtítulo */
+    font-size: 15px; /* Tamaño de la letra del subtítulo */
     font-family: "Verdana", sans-serif; /* Tipo de letra */
 }
 
@@ -177,11 +259,10 @@ body {
     transform: scale(1.1);
 }
 
-.element-selection {
-    text-align: center;
-    color: white;
-    margin-top: 50px;
+.element-selection h1 {
+    margin-top: 100px; /* Aumenta o reduce según lo que necesites */
 }
+
 
 .elements-container {
     display: flex;
@@ -255,17 +336,34 @@ body {
 
 
 
+.elements-container img {
+    width: 50px;   /* Cambia este valor al tamaño deseado */
+    height: auto;   /* Mantiene la proporción */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    transition: transform 0.3s ease;
+}
+
+.elements-container img:hover {
+    transform: scale(1.05); /* Efecto zoom al pasar el mouse */
+}
+
+
+
+
+
+
 
 /* Carousel*-------------------------------------------------------------------------- */
 
 
 .carousel {
-    height: 400px; /* Ajusta según lo que quieras */
+     margin-top: -50px;
+
 }
 
 .carousel .carousel-item {
     width: 500px !important; /* Importante: sobrescribe el estilo JS */
-    height: 400px !important;
+    height: 300px!important;
     overflow: visible !important;
     display: flex !important;
 }
@@ -406,9 +504,95 @@ body {
     margin-bottom: 30px;
 }
 
+/* Estilos para el modal del tarot */
+.modal-tarot {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(90deg, #8B008B, rgba(139, 0, 139, 0.8));
+    border: 2px solid cyan;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    width: 40%;
+    max-width:400px;
+    margin: 10px auto;
+    border-radius: 10px;
+    overflow: hidden;
+    height: 100%;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    background: rgba(139, 0, 139, 0.2);
+    border-bottom: 2px solid cyan;
+    height: 30px;
+}
+
+.modal-header h2 {
+    color: #FFD700;
+    font-size: 1.2rem;
+    margin: 0;
+    padding: 5px 0;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: #FFD700;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #fff;
+}
+
+.modal-body {
+    padding: 30px;
+}
+
+.carta-revelada {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #FFD700;
+}
+
+.carta-revelada img {
+    width: 200px;
+    height: auto;
+    border: 3px solid cyan;
+    box-shadow: 0 0 15px cyan;
+    margin-bottom: 10px;
+}
+
+.carta-info {
+    text-align: center;
+    color: cyan;
+}
+
+.carta-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #fff;
+}
+
 .gracias-container a {
     text-decoration: none;
     color: black;
+    background-color: #8B008B;
     background-color: cyan;
     padding: 10px 20px;
     border-radius: 8px;
@@ -419,3 +603,217 @@ body {
 .gracias-container a:hover {
     background-color: white;
 }
+.start-button, .manual-button {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    padding: 12px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Botón Comenzar en amarillo */
+.start-button {
+    background-color: #f1c40f; /* amarillo brillante */
+    color: #333; /* texto oscuro para contraste */
+    box-shadow: 0 4px 8px rgba(241, 196, 15, 0.5);
+}
+
+.start-button:hover {
+    background-color: #d4ac0d;
+    color: #222;
+    
+}
+
+/* Botón Manual con estilo libro */
+.manual-button {
+    background-color: #34495e; /* gris oscuro */
+    position: relative;
+    padding-left: 45px; /* espacio para el ícono */
+}
+
+/* Icono libro con CSS puro */
+.manual-button::before {
+    content: "\1F4D6"; /* emoji libro abierto 📖 */
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+/* ------------------------------------------------------------------------------------------------*/
+.manual-container {
+  max-width: 720px;
+  margin: 50px auto;
+  background-color: #fffef5;
+  padding: 40px 50px;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  font-family: 'Georgia', serif;
+  color: #3e3e3e;
+  line-height: 1.7;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 100%),
+    repeating-linear-gradient(
+      0deg,
+      #f8f4e8,
+      #f8f4e8 10px,
+      #fffef5 10px,
+      #fffef5 20px
+    );
+}
+
+.manual-titulo {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-size: 2.8rem;
+  text-align: center;
+  color: #8b6e4a;
+  text-shadow: 1px 1px 0 #f9f3e7;
+}
+
+.manual-section {
+  margin-bottom: 40px;
+}
+
+.manual-subtitulo {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #d8cfc0;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  color: #6e5a38;
+}
+
+.manual-lista {
+  margin-left: 20px;
+  list-style-type: disc;
+}
+
+.manual-lista li {
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.manual-parrafo {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.manual-codigo {
+  background-color: #f4f1e0;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.manual-footer {
+  margin-top: 60px;
+  text-align: center;
+  font-style: italic;
+  color: #7a6e5f;
+}
+
+.manual-footer .btn-registro {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 30px;
+  background-color: #f2c94c; /* amarillo */
+  color: #3e3e3e;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(242, 201, 76, 0.6);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.manual-footer .btn-registro:hover {
+  background-color: #e6b83b;
+  color: #222;
+}
+
+
+.contenedor-seleccion {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+/* ------------------------------------------------------------- */
+.seleccion-cartas h2:first-of-type {
+    font-size: 2rem;
+    color: #ffde9f;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px rgba(255, 222, 159, 0.6);
+}
+
+.seleccion-cartas h2:last-of-type {
+    font-size: 1.2rem;
+    color: white;
+    text-align: center;
+    margin: 0.5rem auto 2rem;
+    display: block;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.cartas-tarot {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.carta {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid #ffb347;
+    border-radius: 15px;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 0 15px #ffb347;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.carta:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px #ffb347;
+}
+
+.carta img {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.carta h3 {
+    margin-top: 1rem;
+    color: #fcc23b; /* Dorado */
+    text-shadow:
+        0 0 5px #4b0082,
+        0 0 10px #4b0082,
+        0 0 15px #4b0082;
+    animation: resplandorMistico 2s infinite alternate;
+}
+
+/* Animación del resplandor */
+@keyframes resplandorMistico {
+    0% {
+        text-shadow:
+            0 0 2px #4b0082,
+            0 0 4px #4b0082,
+            0 0 6px #4b0082;
+    }
+    100% {
+        text-shadow:
+            0 0 10px #fcc23b,
+            0 0 20px #fcc23b,
+            0 0 30px #4b0082;
+    }
+}
+

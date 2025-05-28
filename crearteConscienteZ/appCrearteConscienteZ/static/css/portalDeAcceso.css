@@ -7,24 +7,24 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
-    gap: 30px;
+    margin-top: 90px; /* ajusta este valor según la altura de tu navbar */
+    gap: 15px; 
 }
+
 
 /* Estilos del portal de acceso */
 .portal-de-acceso, .crear-cuenta {
     background: rgba(0, 0, 0);
     border: 2px solid cyan;
-    padding: 30px;
+    padding: 10px 30px 10px ;
     border-radius: 15px;
     box-shadow: 0 0 15px cyan, 0 0 30px rgba(0, 255, 255, 0.5);
     text-align: center;
-    max-width: 400px;
-    width: 100%;
+    max-width: 500px;
 }
 
 .portal-de-acceso h1, .crear-cuenta h2 {
-    font-size: 2rem;
+    font-size: 1rem;
     color: cyan;
     letter-spacing: 2px;
     text-shadow: 0 0 5px cyan, 0 0 10px rgba(0, 255, 255, 0.5);

@@ -9,10 +9,6 @@
     <section class="contenido-vertical">
         <h1 class="titulo-mision">Misión Aire La Voz del Viento</h1>
 
-        <div class="imagen-avatar">
-            <img src="{% static 'img/avatar_femenina_aire2.jpg' %}" alt="Avatar del Aire">
-        </div>
-
    
         <div class="intro-con-imagen">         
             <div class="imagen-maestro">
@@ -73,7 +69,28 @@
                         </li>
                     </ul>
                     
-                    <button type="submit" class="btn-misiones">✨ Misiones cumplidas</button>
+                    <button type="button" onclick="completarMision()" class="btn-misiones">✨ Misiones cumplidas</button>
+                </form>
+
+                <script>
+                    function completarMision() {
+                        // Verificar si todos los checkboxes están marcados
+                        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                        let todosCompletados = true;
+                        
+                        checkboxes.forEach(checkbox => {
+                            if (!checkbox.checked) {
+                                todosCompletados = false;
+                            }
+                        });
+                        
+                        if (todosCompletados) {
+                            window.location.href = '/seleccion_carta';
+                        } else {
+                            alert('Por favor, completa todos los desafíos antes de continuar.');
+                        }
+                    }
+                </script>
                 </form>
         
                 <p class="frase-cierre">
