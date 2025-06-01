@@ -16,6 +16,10 @@ from django.shortcuts import redirect, render
 from django.utils import timezone
 from user.models import ProgresoUsuario
 
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
+
+
 
 def contacto(request: HttpRequest) -> render:
     """Formulario de contacto.

@@ -54,6 +54,6 @@ urlpatterns = [
 
     path("usuarios/", include("user.urls")),
     path("manual/", manual_view, name="manual"),
-
-
 ]
+
+handler404 = "appCrearteConscienteZ.views.custom_404"
