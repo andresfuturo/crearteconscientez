@@ -13,11 +13,14 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.http import HttpRequest
 from django.shortcuts import redirect, render
+from django.shortcuts import render as render_response
 from django.utils import timezone
 from user.models import ProgresoUsuario
 
-def custom_404(request, exception):
+def error_404(request, exception=None):
     return render(request, '404.html', status=404)
+
+handler404 = error_404
 
 
 
@@ -80,7 +83,7 @@ def manual_view(request: HttpRequest) -> render:
 
 
 # Create your views here.
-def home(request: HttpRequest) -> render:
+def home(request: HttpRequest) -> render_response:
     """Página principal del sitio.
 
     Muestra la página de inicio del sitio web.

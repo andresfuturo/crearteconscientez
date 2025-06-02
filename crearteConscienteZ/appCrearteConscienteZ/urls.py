@@ -13,7 +13,7 @@ from django.urls import path  # type: ignore[import-untyped]
 from appCrearteConscienteZ import views
 
 urlpatterns: list[path] = [
-    path("", views.home, name="Home"),
+    path("", views.home, name="home"),
     path("seleccion_carta/", views.seleccion_carta, name="seleccion_carta"),
 ]
 

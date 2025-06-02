@@ -61,6 +61,17 @@
         .home-button:hover {
             background-color: #45a049;
         }
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        #errorGif {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -71,7 +82,7 @@
             <p>Verifica la dirección de tu página y vuelve a intentarlo.</p>
         </div>
         <div class="gif-container">
-            <img src="{% static 'img/respira.gif' %}" alt="Relaxing GIF" id="errorGif">
+            <img src="{% static 'img/respira.gif' %}" alt="GIF animado" id="errorGif">
         </div>
         <a href="/" class="home-button">Volver al inicio</a>
     </div>
