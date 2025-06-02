@@ -39,7 +39,7 @@ def iniciar_registro() -> None:
 
     # Datos para el formulario
     datos = {
-        "username": "usuario_prueba126",
+        "username": "usuario_prueba127",
         "email": "prueba124@example.com",
         "password1": "Password123!",
         "password2": "Password123!",

@@ -1,4 +1,6 @@
 /* 🔹 CONFIGURACIÓN GENERAL */
+
+
 body {
     font-family: Arial, sans-serif;
     background-image: url('/static/img/fondo.jpg');
@@ -49,6 +51,7 @@ main {
     justify-content: space-between;
     padding: 10px 15px;
     background-color: rgba(0, 0, 0, 0.8);
+    height: 60px; /* Altura fija para la barra de navegación */
     position: fixed;
     top: 0;
     left: 0;
@@ -60,6 +63,8 @@ main {
 .logo img {
     height: 40px;
     max-width: 100%;
+    vertical-align: middle;
+    margin: auto;
 }
 
 /* 🔹 ENLACES DEL MENÚ */
@@ -229,6 +234,10 @@ main {
 .content .subtitle {
     font-size: 15px; /* Tamaño de la letra del subtítulo */
     font-family: "Verdana", sans-serif; /* Tipo de letra */
+    max-width: 400px; /* Ancho máximo para que se divida en dos líneas */
+    margin: 0 auto; /* Centrar el texto */
+    text-align: center; /* Alinear al centro */
+    line-height: 1.6; /* Espacio entre líneas */
 }
 
 
@@ -648,6 +657,18 @@ main {
     font-size: 24px;
 }
 /* ------------------------------------------------------------------------------------------------*/
+.contact-form-container {
+    max-width: 600px;
+    margin-bottom: 40px;
+    margin: 60px auto 40px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+
+
 .manual-container {
   max-width: 720px;
   margin: 50px auto;
