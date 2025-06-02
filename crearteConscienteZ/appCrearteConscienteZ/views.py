@@ -11,14 +11,23 @@ from django.conf import settings
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
-from django.http import HttpRequest
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import redirect, render
 from django.shortcuts import render as render_response
 from django.utils import timezone
 from user.models import ProgresoUsuario
 
-def error_404(request, exception=None):
-    return render(request, '404.html', status=404)
+
+def error_404(request: HttpRequest) -> HttpResponse:
+    """Muestra la página de error 404 personalizada.
+
+    Args:
+        request: La solicitud HTTP entrante
+
+    Returns:
+        HttpResponse: Una respuesta 404 con la plantilla personalizada
+    """
+    return render(request, "404.html", status=404)
 
 handler404 = error_404
 

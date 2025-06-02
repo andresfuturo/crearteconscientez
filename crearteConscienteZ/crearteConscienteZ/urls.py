@@ -1,4 +1,4 @@
-"""URL configuration for crearteConscieteZ project.
+"""URL configuration for crearteConscienteZ project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -15,18 +15,28 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 
 """
-from django.contrib import admin
-from django.urls import include, path
-from django.views.generic import TemplateView
+
+from appCrearteConscienteZ import views as app_views
 from django.conf import settings
 from django.conf.urls.static import static
-from appCrearteConscienteZ import views as app_views
-from user import views as user_views
-from django.http import HttpResponseNotFound
+from django.contrib import admin
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.urls import include, path
+from user import views as user_views
 
-def custom_404(request, exception):
-    return render(request, '404.html', status=404)
+
+def custom_404(request: HttpRequest, _exception: Exception) -> HttpResponse:
+    """Maneja errores 404 renderizando una página personalizada.
+
+    Args:
+        request: La solicitud HTTP entrante
+        _exception: La excepción que causó el error 404 (no utilizado)
+
+    Returns:
+        HttpResponse: Una respuesta 404 con la plantilla personalizada
+    """
+    return render(request, "404.html", status=404)
 
 handler404 = custom_404
 
@@ -65,8 +75,6 @@ urlpatterns = [
     path("manual/", app_views.manual_view, name="manual"),
 ]
 
-from django.conf import settings
-from django.conf.urls.static import static
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
