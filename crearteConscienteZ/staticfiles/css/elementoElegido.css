@@ -1,0 +1,46 @@
+
+.titulo-elemento {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: cyan !important;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.7);
+    text-transform: uppercase;
+    animation: glow 1.5s infinite alternate;
+    margin-bottom: 10px;
+}
+
+.descripcion-elemento {
+    font-size: 1.2rem;
+    color: #bbb;
+    font-style: italic;
+    text-align: center;
+    margin-top: 100px;
+    opacity: 1;
+    visibility: visible;
+    display: block;
+}
+
+.element-selection h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: cyan !important;
+    letter-spacing: 2px;
+    text-shadow: 0 0 10px cyan, 0 0 20px rgba(0, 255, 255, 0.7);
+    text-transform: uppercase;
+    animation: glow 1.5s infinite alternate;
+    margin-bottom: 10px;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px cyan, 0 0 10px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 15px cyan, 0 0 30px rgba(0, 255, 255, 0.8);
+    }
+}

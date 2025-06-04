@@ -46,7 +46,10 @@ INSTALLED_APPS = [
     "colorfield",
     "admin_interface",
     "django.contrib.admin",
+    'django.contrib.sites',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
@@ -114,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_CODE = "es"
 
 TIME_ZONE = "UTC"
 
@@ -153,3 +156,8 @@ EMAIL_USE_TLS = True
 
 # Override User
 AUTH_USER_MODEL = "user.CustomUser"
+
+# Admin Interface Theme Options
+ADMIN_INTERFACE_THEME_OPTIONS = {
+    'title': 'Crearte ConscienteZ',
+}
