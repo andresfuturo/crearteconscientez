@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<main class="contenedor-seleccion">
+    <section class="seleccion-cartas">
+        <h2>✨ Haz completado tu primera misión✨</h2>
+        <h2> como regalo escoge tu carta del destino</h2>
+
+        <!-- Sección de tarot egipcio -->
+        <div class="cartas-tarot">
+            <div class="carta">
+                <img id="cartaEgipcia" src="{% static 'img/carta-back.png' %}" alt="Carta Egipcia" onclick="seleccionarCarta()">
+                <h3>Revelar Carta Egipcia</h3>
+            </div>
+        </div>
+        <!-- Modal -->
+        <div class="modal-tarot"></div>
+        <script>
+            // Definir la URL base estática
+            const STATIC_URL = '{% static "" %}';
+        </script>
+        <script src="{% static 'js/carta_tarot.js' %}"></script>
+
+
+    </section>
+</main>
+{% endblock %}

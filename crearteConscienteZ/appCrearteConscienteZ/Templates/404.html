@@ -1,0 +1,90 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error 404 - Página no encontrada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .error-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .message {
+            color: #666;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        .gif-container {
+            margin: 30px 0;
+            max-width: 400px;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gif-container img {
+            max-width: 100%;
+            height: auto;
+            max-height: 300px;
+        }
+        .home-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .home-button:hover {
+            background-color: #45a049;
+        }
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        #errorGif {
+            width: auto;
+            height: auto;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <h1>¡Ups! Página no encontrada</h1>
+        <div class="message">
+            <p>Respira profundo...</p>
+            <p>Verifica la dirección de tu página y vuelve a intentarlo.</p>
+        </div>
+        <div class="gif-container">
+            <img src="{% static 'img/respira.gif' %}" alt="GIF animado" id="errorGif">
+        </div>
+        <a href="/" class="home-button">Volver al inicio</a>
+    </div>
+</body>
+</html>

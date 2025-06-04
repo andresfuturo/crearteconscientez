@@ -1,0 +1,61 @@
+# ruff.toml
+
+line-length = 120
+indent-width = 4
+target-version = "py313"
+
+exclude = [
+    # Carpetas ocultas de VCS y control de versiones
+    ".bzr",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".svn",
+
+    # Entornos virtuales y caches
+    ".direnv",
+    ".eggs",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".tox",
+    ".venv",
+    "venv",
+
+    # Directorios comunes de build y distribución
+    "_build",
+    "build",
+    "dist",
+    "buck-out",
+    "__pypackages__",
+
+    # Node / Frontend
+    "node_modules",
+
+    # Archivos del editor
+    ".vscode",
+
+    # Django migrations u otras generadas automáticamente
+    "**/migrations/**/*",
+
+    # Entornos instalados
+    "site-packages"
+]
+
+[lint]
+select = ["ALL"]
+ignore = [
+    "D104",     # __init__ 
+    "E501",     # Linea larga para el  profeseor Cristian 
+    "N999",      # se tenia que hacer  con camelCase pero para evitar errores se omite esta regla
+    "N802"      # se tenia que hacer  con snake_case pero para evitar errores se omite esta regla 
+]
+fixable = ["ALL"]
+
+[lint.pydocstyle]
+convention = "google"  # Puedes cambiar a "numpy" o "pep257" si lo prefieres
